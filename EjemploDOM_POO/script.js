@@ -1,8 +1,16 @@
 import Persona from './Persona.js';
+import Cliente from './Cliente.js';
 
-const persona1 = new Persona('Anuar', 'Khan');
+// Crear instancia de Persona
 
+const persona1 = new Persona('Anuar', 'Khan', '12345678A');
+const cliente1 = new Cliente('Ana', 'Lopez', '87654321B', '555-1234');
 
+var nButton1 = 1;
+var nButton2 = 1;
+var nButton3 = 1;
+
+// Manejo del DOM
 document.addEventListener('DOMContentLoaded', function () {
 
     const sectionPrincipal = document.getElementById('principal');
@@ -11,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     divP.classList.add('contenedor');
 
     const p1 = document.createElement('p');
-    p1.textContent = persona1.nombre + ' ' + persona1.apellido;
+    p1.textContent = cliente1.nombre + ' ' + cliente1.apellido + ' ' + cliente1.getDni() + ' ' + cliente1.telefono;
 
     p1.classList.add('parrafo');
 
@@ -27,17 +35,34 @@ document.addEventListener('DOMContentLoaded', function () {
     btn_2.classList.add('btn');
     btn_3.classList.add('btn');
 
-    btn_1.addEventListener('click', function () {
-        p1.style.color = 'red';
+    btn_1.addEventListener('click', function (event) {
+        click(1);
     });
-    btn_2.addEventListener('click', function () {
-        p1.style.color = 'blue';
+    
+    btn_2.addEventListener('click', function (event) {
+        click(2);
     });
-    btn_3.addEventListener('click', function () {
-        p1.style.color = 'green';
+    btn_3.addEventListener('click', function (event) {
+        click(3);
     }); 
 
     divP.append(btn_1, btn_2, btn_3);
     
     sectionPrincipal.append(p1, divP);
 });
+
+function click(nButton) {
+    
+    if (nButton === 1) {
+        alert("Esto es un boton y lo he pulsado " + nButton1 + " veces");
+        nButton1++;
+    }
+    if (nButton === 2) {
+        alert("Esto es un boton y lo he pulsado " + nButton2 + " veces");
+        nButton2++;
+    } 
+        if (nButton === 3) {
+        alert("Esto es un boton y lo he pulsado " + nButton3 + " veces");
+        nButton3++;
+    }  
+}
