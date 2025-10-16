@@ -14,7 +14,8 @@ public class CarritoController {
 
 
     @GetMapping(value = "/carrito")
-    public ResponseEntity<Shop> getCharacters() {
+    public ResponseEntity<Shop> getShop() {
+
         return ResponseEntity.ok(new Shop("€"));
     }
 }
