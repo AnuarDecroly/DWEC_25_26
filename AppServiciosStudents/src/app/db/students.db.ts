@@ -24,9 +24,9 @@ export const ALUMNOS: IStudent[] = [
     },
     {
         id: 4,
-        nombre: 'Michael Jordan',
+        nombre: 'Miguel Indurain',
         edad: 59,
-        email: 'mj@airjordan.com',
-        curso: '6ESO'
+        email: 'miguelon@banesto.com',
+        curso: '5ESO'
     },
 ]

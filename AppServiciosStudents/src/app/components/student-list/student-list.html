@@ -1,3 +1,7 @@
+<div>
+    <app-filter-form (cursoSeleccionado)="getCourse($event)"></app-filter-form>
+</div>
+
 <section class="row g-2 mt-5">
     <hr>
     @for(student of arrStudents; track student.id){
