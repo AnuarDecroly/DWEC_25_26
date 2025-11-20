@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { Iserie } from '../../interfaces/iserie.interface';
 import { SerieService } from '../../services/serie-service';
+import { SeriesCard } from "../series-card/series-card";
 
 @Component({
     selector: 'app-series-list',
-    imports: [],
+    imports: [SeriesCard],
     templateUrl: './series-list.html',
     styleUrl: './series-list.css',
 })
