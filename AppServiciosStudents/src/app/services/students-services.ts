@@ -43,4 +43,9 @@ export class StudentsServices {
     getStudentByCourse(course: string): IStudent[] {
         return this.arrEstudiantes.filter(student => student.curso.includes(course));
     }
+
+    //Ejemplo de estudiar
+    removeStudentbyId(studentRemove: IStudent): void {
+        this.arrEstudiantes = this.arrEstudiantes.filter(student => student.id !== studentRemove.id);
+    }
 }
