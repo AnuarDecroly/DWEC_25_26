@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Iserie } from '../interfaces/iserie.interface';
-import { v4 as uuid } from 'uuid';
+
 
 @Injectable({
     providedIn: 'root',
@@ -8,7 +8,6 @@ import { v4 as uuid } from 'uuid';
 export class SerieService {
     private arrSeries: Iserie[];
     private id: number;
-    private newId = uuid();
 
     constructor() {
         this.arrSeries = [];
@@ -30,6 +29,7 @@ export class SerieService {
 
     getSerieById(_id: string): Iserie | undefined {
         return this.arrSeries.find(s => s._id === _id);
+
     }
 
     //Metodo para eliminar series
