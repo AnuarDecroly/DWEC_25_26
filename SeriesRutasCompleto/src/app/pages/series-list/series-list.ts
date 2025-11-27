@@ -21,6 +21,9 @@ export class SeriesList {
 
     ngOnInit(): void {
         this.seriesArray = this.seriesService.getAllSeries();
+
     }
+
+
 
 }

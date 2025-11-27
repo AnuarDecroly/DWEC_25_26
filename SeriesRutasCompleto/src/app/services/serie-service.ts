@@ -54,9 +54,16 @@ export class SerieService {
     }
 
     updateSerie(serie: Iserie): void {
-        let i = this.arrSeries.indexOf(serie);
-        this.arrSeries[i] = serie;
-        console.log(this.arrSeries[i]);
+        let i = this.arrSeries.findIndex(se => se.id == serie.id);
+        serie._id = this.arrSeries[i]._id;
+        console.log(serie);
+
+        if (i != -1 && i >= 0 && i < this.arrSeries.length) {
+            this.arrSeries.splice(i, 1);
+        }
+
+        this.arrSeries.push(serie);
+
     }
 
     //Filtros
