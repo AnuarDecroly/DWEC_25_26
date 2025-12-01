@@ -1,8 +1,10 @@
 package com.decroly.product_apirest.model;
 
+import java.util.UUID;
+
 public class Product
 {
-    private int id;
+    private String id;
     private String name;
     private String description;
     private double price;
@@ -10,9 +12,9 @@ public class Product
     private String image;
     private boolean active;
 
-    public Product(int id, String name, String description, double price, String category, String image, boolean active)
+    public Product(String name, String description, double price, String category, String image, boolean active)
     {
-        this.id = id;
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.description = description;
         this.price = price;
@@ -21,7 +23,7 @@ public class Product
         this.active = active;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
