@@ -69,6 +69,9 @@ export class SerieService {
     //Filtros
 
     getSeriesByFilters(filtro: any): Iserie[] {
+        if (filtro.name == "" && filtro.category == "") {
+            return this.arrSeries;
+        }
         return this.arrSeries.filter(s => s.channel === filtro.channel
             && s.rating >= filtro.raiting
         );

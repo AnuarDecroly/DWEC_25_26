@@ -19,13 +19,25 @@ export class SeriesList {
         this.seriesArray = [];
     }
 
-    ngOnInit(): void {
-        this.seriesArray = this.seriesService.getAllSeries();
+    async ngOnInit(): Promise<void> {
+        // this.seriesService.getAllSeries().subscribe((data: Iserie[]) => {
+        //     this.seriesArray = data;
+        // }
+        // );
+        try {
+            this.seriesArray = await this.seriesService.getAllSeriesWithPromise();
+        }
+        catch (err) {
+            console.log("Error al conectar a la API");
+            alert("Error al conectar a la API")
+        }
+
+
     }
 
 
     inputFilter($event: any) {
-        this.seriesArray = this.seriesService.getSeriesByFilters($event);
+        //this.seriesArray = this.seriesService.getSeriesByFilters($event);
     }
 
 
